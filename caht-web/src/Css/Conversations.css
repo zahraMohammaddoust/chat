@@ -1,0 +1,39 @@
+
+.conversation-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    }
+    
+    .conversation-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f2f2f2;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    .conversation-item:hover {
+    background-color: #f7f7f7;
+    }
+    
+    .conversation-item p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    }
+    
+    /* Add this class to your loading component */
+    .loading {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    }
+    
+    /* Add this class to your ChatHub component if needed */
+    .chat-hub {
+    padding: 10px;
+    border-bottom: 1px solid #f2f2f2;
+    }

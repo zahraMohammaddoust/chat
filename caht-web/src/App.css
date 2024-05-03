@@ -1,0 +1,356 @@
+@font-face {
+  font-family: iransans;
+  src: url("Resources/Fonts/IRANSansWeb.eot");
+  src: url("Resources/Fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"),
+    url("Resources/Fonts/IRANSansWeb.woff2") format("woff2"),
+    url("Resources/Fonts/IRANSansWeb.woff") format("woff"),
+    url("Resources/Fonts/IRANSansWeb.ttf") format("truetype");
+}
+
+body {
+  overflow: hidden;
+  /* background-color: #292c31; */
+  font-family: iransans, tahoma, Arial, Helvetica;
+  background-color: #f9f9f9;
+  text-align: right;
+  direction: rtl;
+  /* font-size: 13px; */
+    /* background-color: #d7d7d7; */
+    background-color: #d7d7d74a;
+
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.App{
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.flexCulomn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* toast and modalAlert style */
+.snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  color: #f8f7f7;
+  background-color: rgb(114, 114, 114) !important;
+  text-align: center;
+  border-radius: 2px;
+  padding: 10px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 30px;
+  transform: translate(-50%, 0px);
+  border-radius: 5px;
+  height: fit-content;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+/* @charset "UTF-8"; */
+
+@-webkit-keyframes IGCoreModalShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes IGCoreModalShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* .smile-modalAlert {
+} */
+
+.smile-modalAlert-mask {
+  position: fixed;
+  z-index: 120;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.smile-modalAlert-message-body {
+  position: fixed;
+  z-index: 200;
+  width: 50%;
+  top: 30%;
+  left: 25%;
+  background-color: #fafafc;
+  text-align: center;
+  border-radius: 7px;
+  overflow: hidden;
+  animation: IGCoreModalShow 0.2s ease-out;
+}
+
+.search-inputs {
+  justify-content: center !important;
+}
+.search-inputs .date,.search-inputs .Autocomplete{
+  width: 100%;
+  max-width: 500px;
+  margin: 0px 8px;
+}
+.search-inputs .Autocomplete{
+  margin-bottom: 27px;
+}
+.search-inputs .rmdp-container{
+  width: 100%;
+}
+
+.smile-modalAlert-message-body.success {
+  box-shadow: 0px 0 5px #28a745;
+  border: 1px solid #28a745;
+}
+
+.smile-modalAlert-message-body.warning {
+  box-shadow: 0px 0 5px #ffc107;
+  border: 1px solid #ffc107;
+}
+
+.smile-modalAlert-message-body.info {
+  box-shadow: 0px 0 5px #17a2b8;
+  border: 1px solid #17a2b8;
+}
+
+.smile-modalAlert-message-body.error {
+  box-shadow: 0px 0 5px #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.smile-modalAlert-message-tbf {
+  padding: 0 20px;
+  font-size: 13px;
+  color: #000;
+  word-wrap: break-word;
+  -word-break: break-all;
+}
+
+.smile-modalAlert-message-title {
+  font-size: 14px;
+  text-shadow: 0px 0px 1px #000;
+  text-align: right;
+}
+
+.smile-modalAlert-message-body .smile-modalAlert-message-title:before {
+  margin-left: 5px;
+  font-size: 18px;
+  border: 2px solid;
+  padding: 0px;
+  width: 22px;
+  height: 22px;
+  line-height: 24px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.smile-modalAlert-message-body.success .smile-modalAlert-message-title:before {
+  content: "✔";
+  color: #28a745;
+}
+
+.smile-modalAlert-message-body.warning .smile-modalAlert-message-title:before {
+  content: "!";
+  color: #ffc107;
+}
+
+.smile-modalAlert-message-body.info .smile-modalAlert-message-title:before {
+  content: "!";
+  color: #17a2b8;
+}
+
+.smile-modalAlert-message-body.error .smile-modalAlert-message-title:before {
+  content: "×";
+  color: #dc3545;
+}
+
+.smile-modalAlert-message-content,
+.smile-modalAlert-message-title {
+  padding: 1.2em 20px 0.5em;
+}
+
+.smile-modalAlert-message-content {
+  text-align: right;
+  overflow: auto;
+  max-height: 40vh;
+  padding-top: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.smile-modalAlert-message-button {
+  position: relative;
+  line-height: 42px;
+  margin-top: 20px;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #9c9c9c;
+}
+
+.smile-modalAlert-message-button a:focus {
+  outline: none !important;
+  font-weight: bold;
+}
+
+.smile-modalAlert-message-button:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #d5d5d6;
+  color: #d5d5d6;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.smile-modalAlert-message-button a {
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #007aff;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+a.smile-modalAlert-message-button-cancel {
+  -color: #353535;
+  border-left: 1px solid #9c9c9c;
+}
+
+a.smile-modalAlert-message-button-confirm:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  border-left: 1px solid #9c9c9c;
+}
+
+a.smile-modalAlert-message-filter {
+  background: #999;
+  color: #000;
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  opacity: 0.3;
+}
+
+@media (max-width: 780px) {
+  .smile-modalAlert-message-body {
+    width: 90%;
+    top: 10%;
+    left: 5%;
+  }
+}
+/* toast and modalAlert style */
